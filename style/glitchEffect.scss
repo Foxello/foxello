@@ -7,18 +7,18 @@
         color:transparent;
         position: absolute;
         overflow: hidden;
-        padding: 0 30px;
+        padding: 0 10%;
         z-index: -1;
      }
      &:before {
         color: #FF0054;
-        left:3px;
+        left:-4%;
         //text-shadow: -3px 0#FF0054;
         animation: glitch-before 4s linear 0s infinite alternate;
      }
      &:after {
         color: #08FDD8 ;
-        left:-3px;
+        left:4%;
         //text-shadow: -3px 0 #08FDD8;
         animation: glitch-after 4s linear 0s infinite alternate;
      }
