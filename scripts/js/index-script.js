@@ -61,6 +61,16 @@ function changeCurIcon(){
     navIcons[currentIcon.curNumber].classList.toggle("currentIcon");
 }
 
+var contactButton = document.querySelector(".window__button");
+contactButton.addEventListener("click",()=>{
+    scrollX = 270;
+    currentIcon.lastNumber = currentIcon.curNumber;
+    currentIcon.curNumber = 3;
+    document.querySelector('.hi__container').style.transform = 
+    'rotateX(' + scrollX + 'deg)';
+    changeCurIcon();
+})
+
 function createSquare(){
     const section = document.querySelector(".hi__window");
     const square = document.createElement("span");
