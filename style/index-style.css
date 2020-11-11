@@ -416,7 +416,6 @@ path,polygon{
 
     }
     .hi__menu i::before{
-        text-shadow: 0 0 2px #ffffff;
         color:#ffffff;
     }
 
@@ -426,8 +425,6 @@ path,polygon{
         color:  #08FDD8;
         padding-left: 30px;
         font-family: "Montserrat";
-        text-shadow: 0 0 15px #08FDD8,
-                 0 0 25px #08FDD8;
     }
 
     .menu__nav a{
