@@ -9,9 +9,7 @@ function send(event, php){
         if (req.status >= 200 && req.status < 400) {
         json = JSON.parse(this.response); // Ебанный internet explorer 11
             console.log(json);
-            
             // ЗДЕСЬ УКАЗЫВАЕМ ДЕЙСТВИЯ В СЛУЧАЕ УСПЕХА ИЛИ НЕУДАЧИ
-            
             if (json.result == "success") {
                 // Если сообщение отправлено
                 alert("Сообщение отправлено");
@@ -62,7 +60,7 @@ for (let index = 0; index < arrayInputs.length; index++) {
             element.parentElement.classList.remove("_inputOk");
             element.parentElement.classList.add("_inputError");
             numbCount-=25;
-            numb.innerHTML = numbCount;
+            numb.innerHTML = numbCount + "%";
             if(progress!=0){
                 
                 if(progress<=180){
@@ -81,7 +79,7 @@ for (let index = 0; index < arrayInputs.length; index++) {
             element.parentElement.classList.remove("_inputError");
             element.parentElement.classList.add("_inputOk");
             numbCount+=25;
-            numb.innerHTML = numbCount;
+            numb.innerHTML = numbCount + "%";
             progress+=90;
             if(progress<=180){
                 progressBarLeft.style.transform = "rotate(" + progress + "deg)";
