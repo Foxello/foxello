@@ -91,3 +91,10 @@
         width: 80%;
     }
 }
+
+@media screen and (max-width: 520px){
+    .info__skills{
+        font-size: 0.7em;
+    }
+    
+}
