@@ -39,7 +39,6 @@
 
 .contact{
     transform: rotateX(90deg) translateZ(50vh) translateY(-50vh);
-    background: green;
 }
 
 .hi__container{
