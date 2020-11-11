@@ -50,6 +50,7 @@ form{
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    width: 70%;
 }
 
 .contact__form__inputs{
@@ -79,24 +80,45 @@ form{
     border-radius: 5px;
     box-sizing: border-box;
     outline: none;
+    position: relative;
+    font-size: 1.5em;
+}
+
+.contact__form__inputBox._inputError::after,.contact__form__inputBox._inputError textarea::after{
+    content: "*";
+    position: absolute;
+    color: red;
+    right: -30px;
+    top: 20%;
+    font-size: 2em;
+}
+
+.contact__form__inputBox._inputOk::after,.contact__form__inputBox._inputOk textarea::after{
+    content: "*";
+    position: absolute;
+    color: greenyellow;
+    right: -30px;
+    top: 20%;
+    font-size: 2em;
 }
 
 .contact__form__inputBox textarea{
-    padding: 9% 0;
+    padding: 3% 0;
     resize: none;
 }
 
-.contact__form__inputBox textarea:focus ~ span{
+.contact__form__inputBox textarea:focus ~ span, .contact__form__inputBox textarea:valid ~ span{
     font-size: 0;
 }
 
 .contact__form__inputBox span{
     position: absolute;
-    top: 25%;
+    top: 30%;
     left: 5%;
     display: inline-block;
     transition: 0.5s;
     pointer-events: none;
+    font-size: 1.3em;
     opacity: 0.5;
 }
 
@@ -108,7 +130,8 @@ form{
 .contact__form__inputBox input:valid ~ span{
     color:  #08FDD8;
     left: 0; 
-    top: -65%;
+    top: -45%;
+    opacity: 1;
 }
 
 .contact__form__button{
@@ -119,4 +142,24 @@ form{
 
 form ._error{
     box-shadow: 0 0 15px red;
+}
+
+@media screen and (max-width: 1020px){
+    .contact__form h3{
+        font-size: 2em;
+        padding-bottom: 20%;
+    }
+
+    .contact__progress-bar__box{
+        display: none;
+    }
+
+    .contact__form{
+        width: 100%;
+    }
+
+    .contact__form__inputBox span{
+        font-size: 1em;
+    }
+    
 }

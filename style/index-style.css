@@ -1,4 +1,3 @@
-
 .hi__menu{
     width: 100px;
     background: #1E1E1E;
@@ -7,7 +6,6 @@
     justify-content: space-between;
     align-items: center;
 }
-
 
 .hi__window{
     transform: translateZ(100%);
@@ -110,14 +108,11 @@
     display: flex;
     justify-content: space-between;
     height: 100vh;
+    position: relative;
 }
 
 .menu__nav{
     width: 100%;
-}
-
-.hi__row > *{
-    height: 100%;
 }
 
 .window__title{
@@ -143,7 +138,9 @@
     z-index: 2;
 }
 
-
+.hi__menu > *:nth-child(odd){
+    margin: 5% 0;
+}
 
 .hi__window__logo{
     width: 45%;
@@ -281,7 +278,67 @@ path,polygon{
 }
 
 
+.burger{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 30px;
+    top: 30px;
+    z-index: 10;
+}
 
+.burger .menu__icon__wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.burger .menu__icon{
+    position: relative;
+    width: 60%;
+    height: 12%;
+    background-color: #232323;
+}
+
+.burger .menu__icon::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #232323;
+    left: 0;
+    top: 15px;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+
+.burger .menu__icon::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #232323;
+    left: 0;
+    top: -15px;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+
+.burger:active.hi__menu{
+    left: 0;
+}
+
+._open{
+    left: 0 !important;
+}
 
 @keyframes bubble{
     0%{
@@ -311,7 +368,9 @@ path,polygon{
     .hi__window__logo{
         display: none;
     }
-
+    .hi__window__title{
+        width: 90%;
+    }
 }
 
 @media screen and (max-width:900px){
@@ -327,7 +386,70 @@ path,polygon{
 }
 
 @media screen and (max-width:580px){
+    .burger{
+        opacity: 1;
+        visibility: visible;
+    }   
+
     .window__title{
-        font-size: 2.5em   
+        font-size: 3em   
+    }
+
+    .hi__menu{
+        position: absolute;
+        top: 0;
+        left: -800px;
+        z-index: 10;
+        width: 80%;
+        height: 100%;
+        transition: 0.5s ease;
+        z-index: 1;
+    }
+
+
+    .socials__list{
+        flex-direction: row;
+    }
+
+    .hi__menu i{
+        position: relative;
+
+    }
+    .hi__menu i::before{
+        text-shadow: 0 0 2px #ffffff;
+        color:#ffffff;
+    }
+
+    .hi__menu i::after{
+        content: attr(name);
+        font-size: 0.8em;
+        color:  #08FDD8;
+        padding-left: 30px;
+        font-family: "Montserrat";
+        text-shadow: 0 0 15px #08FDD8,
+                 0 0 25px #08FDD8;
+    }
+
+    .menu__nav a{
+        align-items: center;
+        
+    }
+
+    .hi__window .content{
+        justify-content: center;
+    }
+
+    .window__buttonBox{
+        display: flex;
+        justify-content: center;
+    }
+    .window__title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .window__title > *{
+        text-align: center;
     }
 }

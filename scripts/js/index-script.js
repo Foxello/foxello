@@ -8,6 +8,11 @@ const currentIcon = {
     lastNumber:0,
     curNumber:0
 }
+var burgerButton = document.querySelector(".burger");
+burgerButton.addEventListener("click",()=>{
+    var nav = document.querySelector(".hi__menu");
+    nav.classList.toggle("_open");
+})
 navIcons[currentIcon.curNumber].classList.toggle("currentIcon")
 svg.forEach(element => {
     element.classList.add("svg__animate");
@@ -41,6 +46,7 @@ for(let i = 0;i<navIcons.length;i++){
         break;
     }
     navIcons[i].onclick = ()=>{
+        document.querySelector(".hi__menu").classList.remove("_open");
         scrollX = i*90;
         currentIcon.lastNumber = currentIcon.curNumber;
         currentIcon.curNumber = i;

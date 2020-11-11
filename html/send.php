@@ -6,17 +6,18 @@ require '../php/Exception.php';
 
 // Переменные, которые отправляет пользователь
 $name = $_POST['name'];
-$email = $_POST['country'];
-$text = $_POST['city'];
-$file = $_FILES['message'];
+$email = $_POST['mail'];
+$city = $_POST['city'];
+$message = $_POST['message'];
 
 // Формирование самого письма
-$title = "Заголовок письма";
+$title = "Review to Foxello";
 $body = "
 <h2>Новое письмо</h2>
 <b>Имя:</b> $name<br>
 <b>Почта:</b> $email<br><br>
-<b>Сообщение:</b><br>$text
+<b>Город:</b> $city<br><br>
+<b>Сообщение:</b>$message<br>
 ";
 
 // Настройки PHPMailer
@@ -25,19 +26,20 @@ try {
     $mail->isSMTP();   
     $mail->CharSet = "UTF-8";
     $mail->SMTPAuth   = true;
-    $mail->SMTPDebug = 2;
+    //$mail->SMTPDebug = 2;
     $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
 
     // Настройки вашей почты
-    $mail->Host       = 'smtp.yandex.ru'; // SMTP сервера вашей почты
-    $mail->Username   = 'F0xell0@yandex.ru'; // Логин на почте
+    $mail->Host       = 'ssl://smtp.bk.ru'; // SMTP сервера вашей почты
+    $mail->Username   = 'foxello@bk.ru'; // Логин на почте
     $mail->Password   = '488124aa'; // Пароль на почте
-    $mail->SMTPSecure = 'ssl';
+    $mail->SMTPSecure = 'SSL';
     $mail->Port       = 465;
-    $mail->setFrom('F0xell0@yandex.ru', 'Foxello'); // Адрес самой почты и имя отправителя
+    $mail->setFrom('foxello@bk.ru', 'Привет, это Foxello'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
-    $mail->addAddress('a.bolotov-2@yandex.ru');  
+    $mail->addAddress('a.bolotov-2@yandex.ru'); 
+
 
 
     // Прикрипление файлов к письму
@@ -69,3 +71,4 @@ else {$result = "error";}
 
 // Отображение результата
 echo json_encode(["result" => $result, "resultfile" => $rfile, "status" => $status]);
+?>

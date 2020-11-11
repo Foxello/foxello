@@ -8,35 +8,41 @@
     <link rel="stylesheet" href="../style/index-style.css">
     <link rel="stylesheet" href="../style/normalize.css">
     <link rel="stylesheet" href="../style/glitchEffect.css">
-    
+    <link rel="stylesheet" href="../style/progressBar.css">
     <link rel="stylesheet" href="../style/infoSlide.css">
     <link rel="https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css">
     <link rel="stylesheet" href="../style/projectsStyle.css">
     <link rel="stylesheet" href="../style/formStyle.css">
+    <link rel="SHORTCUT ICON" href="../images/foxello-logo.ico" type="image/x-icon">
 </head>
 <body>
     <div class="wrapper">
         <div class="container">
             <div class="hi__row">
+                <div class="burger">
+                    <div class="menu__icon__wrapper">
+                        <div class="menu__icon"></div>
+                    </div>
+                </div>
                 <div class="hi__menu">
                     <div class="menu__logo">
                     </div>
                     <div class="menu__nav">
                         <ul class="nav__list">
                             <li>
-                                <a href="#"><i class="fas fa-home"></i></a>
+                                <a href="#"><i class="fas fa-home" name="Home"></i></a>
                                 
                             </li>
                             <li>
-                                <a href="#"><i class="fas fa-user"></i></a>
+                                <a href="#"><i class="fas fa-user" name="My Skills"></i></a>
                                 
                             </li>
                             <li>
-                                <a href="#"><i class="fas fa-cogs"></i></a>
+                                <a href="#"><i class="fas fa-cogs" name="My Projects"></i></a>
                                 
                             </li>
                             <li>
-                                <a href="#"><i class="fas fa-envelope"></i></a>
+                                <a href="#"><i class="fas fa-envelope" name="Contacts"></i></a>
                                 
                             </li>
                         </ul>
@@ -44,13 +50,13 @@
                     <div class="menu__socials">
                         <ul class="socials__list">
                             <li>
-                                <i class="fab fa-vk"></i>
+                                <a href="https://vk.com/foxello" target="_blank"><i class="fab fa-vk"></i></a>
                             </li>
                             <li>
-                                <i class="fab fa-github"></i>
+                                <a href="https://github.com/Foxello" target="_blank"><i class="fab fa-github"></i></a>
                             </li>
                             <li>
-                                <i class="fab fa-telegram-plane"></i>
+                                <a href="#" target="_blank"><i class="fab fa-telegram-plane"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -290,19 +296,19 @@
                             <div class="contact__content content">
                                 <div class="contact__form">
                                     <div class="contact__block-form">
-                                        <form action="" id="form" type="submit" onsubmit="send(event,'send.php')" method="POST">
+                                        <form action="" id="form" type="submit" onsubmit="send(event,'send.php')" method="POST" enctype="multipart/form-data">
                                             <h3>Contact with me:</h3>
                                             <div class="contact__form__inputs">
                                                 <div class="contact__form__inputBox">
-                                                    <input name = "name" type="text" required = "required" class="_req">
+                                                    <input name = "name" type="text" required = "required" class="_req" autocomplete="off">
                                                     <span>Full Name</span>
                                                 </div>
                                                 <div class="contact__form__inputBox">
-                                                    <input name="country" type="text" required = "required" class="_req">
-                                                    <span>Country</span>
+                                                    <input name="mail" type="text" required = "required" class="_req inputMail">
+                                                    <span>E-mail:</span>
                                                 </div>
                                                 <div class="contact__form__inputBox">
-                                                    <input name = "city" type="text" required = "required" class="_req">
+                                                    <input name = "city" type="text" required = "required" class="_req inputCity">
                                                     <span>City</span>
                                                 </div>
                                                 <div class="contact__form__inputBox">
@@ -314,8 +320,19 @@
                                         </form>
                                     </div>
                                 </div>
-                                <div class="contact__progress-bar">
-
+                                <div class="contact__progress-bar__box">
+                                    <div class="contact__progress-bar">
+                                        <div class="inner"></div>
+                                        <div class="numb">0%</div>
+                                        <div class="circle">
+                                            <div class="bar left">
+                                                <div class="progress"></div>
+                                            </div>
+                                            <div class="bar right">
+                                                <div class="progress"></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

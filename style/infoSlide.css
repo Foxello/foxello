@@ -54,6 +54,12 @@
     padding: 1%;
 }
 
+
+.info__skills p{
+    width: 100%;
+    font-size: 2em;
+ }
+
 @keyframes pixelAnim{
     0%{
         background-position-y: 0;
@@ -63,7 +69,25 @@
     }
 }
 
- .info__skills p{
-    width: 80%;
-    font-size: 2em;
- }
+@media screen and (max-width: 1420px){
+    .info__skills{
+        font-size: 0.9em;
+    }
+    
+}
+
+@media screen and (max-width: 1150px){
+    .info__skills{
+        font-size: 0.8em;
+    }
+    
+}
+
+@media screen and (max-width: 860px){
+    .info__cube{
+        display: none;
+    }
+    .info__skills{
+        width: 80%;
+    }
+}

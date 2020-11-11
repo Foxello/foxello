@@ -42,8 +42,8 @@ light1.shadow.camera.near = 0.1;
 light1.shadow.camera.far = 25;
 scene.add(light1);
 //Controls
-var controls = new THREE.OrbitControls(camera , renderer.domElement);
-controls.update();
+//var controls = new THREE.OrbitControls(camera , renderer.domElement);
+//controls.update();
 
 
 //Render
@@ -51,7 +51,7 @@ function render() {
     requestAnimationFrame( render ); //З амена SetInterval
      cube.rotation.x += 0.005;
      cube.rotation.y += 0.005;
-    controls.update();
+    //controls.update();
     renderer.render( scene, camera );
 }
 
