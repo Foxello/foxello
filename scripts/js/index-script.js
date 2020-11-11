@@ -135,4 +135,4 @@ window.addEventListener("wheel", (e)=>{
     },1000)
 })
 
-var cubes = setInterval(createSquare,150);
+var cubes = setInterval(createSquare,350);
