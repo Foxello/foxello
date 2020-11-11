@@ -1,0 +1,333 @@
+
+.hi__menu{
+    width: 100px;
+    background: #1E1E1E;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.hi__window{
+    transform: translateZ(100%);
+}
+
+@keyframes backgroundAnimate{
+    0%{
+        background-image: url(../images/backgroundAnimStep1.png);
+    }
+    50%{
+        background-image: url(../images/backgroundAnimStep2.png);
+    }
+    100%{
+        background-image: url(../images/backgroundAnimStep3.png);
+    }
+}
+.info{
+    transform: rotateX(-90deg) translateZ(50vh) translateY(50vh);
+    background:  #232323;
+}
+
+.projects{
+    transform: rotateY(180deg) translateZ(100vh) scale(-1);
+}
+
+.side{
+    background: #232323;
+    background-size: cover;
+    animation: backgroundAnimate 3s steps(3) infinite;
+}
+
+.contact{
+    transform: rotateX(90deg) translateZ(50vh) translateY(-50vh);
+    background: green;
+}
+
+.hi__container{
+    transition: all 1s ease;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform-origin: center center -50vh;
+}
+
+.hi__container > *{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 3;
+    position: absolute;
+}
+
+.content__cube{
+    flex: 1 1 auto;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.info__window canvas{
+    position: relative;
+    z-index: 1;
+}
+
+.back__square{
+    position: absolute;
+    pointer-events: none;
+    background-color: #fff;
+    animation: background-squares 7s linear infinite;
+    transform-origin: center;
+    z-index: 1;
+}
+
+@keyframes background-squares{
+    0%{
+        transform: scale(0) rotate(0deg) translateY(0);
+        opacity: 0;
+    }
+    10%{
+        opacity: 0.5;
+    }
+    90%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0;
+        transform: scale(1) rotate(360deg) translateY(-500%);
+    }
+}
+
+.content{
+    width: 82%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hi__row{
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.menu__nav{
+    width: 100%;
+}
+
+.hi__row > *{
+    height: 100%;
+}
+
+.window__title{
+    font-size: 5em;
+    margin-bottom: 50px;
+}
+
+.unselectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                    not supported by any browser */
+  }
+
+.hi__window__title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+
+
+.hi__window__logo{
+    width: 45%;
+}
+
+.bluelogo{
+    position: relative;
+    
+}
+
+.bluelogo > svg{
+    position: relative;
+    z-index: 5;
+}
+
+.pinklogo{
+    position: absolute;
+    width: 100%;
+    left: 8px;
+    top: -4px;
+    z-index: 4;
+}
+
+.window__button{
+    overflow: hidden;
+}
+
+.window__button{
+    background-color: transparent;
+    border: 4px solid #08FDD8;
+    font-size: 36px;
+    transition: all 0.15s ease;
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    user-select: none;   
+}
+
+
+.window__button a{
+    display: block;
+    padding: 8px 30px;
+}
+
+.window__button :hover{
+    
+    background-color: #08FDD8 ;
+}
+
+.window__button :hover a{
+    color: #000 !important;
+    background-color: #08FDD8 ;
+}
+
+.nav__list{
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    color:  #5f5f5f;
+}
+
+.nav__list li{
+    height: 80px;
+}
+
+.nav__list li a{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    
+}
+
+.socials__list{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    color:  #5f5f5f;
+}
+
+.menu__logo{
+    height: 83px;
+    width: 80px;
+    background: url(../images/foxello-logo.png);
+}
+
+path,polygon{
+    stroke-dasharray: 1980;
+    stroke-dashoffset: 0;
+    box-shadow: 0 0 50px #08FDD8,
+                inset 0 0 50px #08FDD8;
+}
+
+.svg__animate{
+    animation: animate 3s linear;
+}
+
+.bubble{
+    position: absolute;
+    background-color: #fff;
+    pointer-events: none;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    animation: bubble 1s linear infinite;
+    z-index: 3;
+}
+
+.nav__list i{
+    transition: all 0.2s ease ;
+    display: flex;
+    align-items: center;
+    /* font-weight: 500; */
+}
+
+.nav__list a:hover i{
+    color:#08FDD8 ;
+    text-shadow: 0 0 15px #08FDD8,
+                 0 0 25px #08FDD8;
+}
+
+.currentIcon{
+    color:#08FDD8 !important;
+    text-shadow: 0 0 15px #08FDD8,
+                 0 0 25px #08FDD8;
+    border-right: 2px solid #08FDD8;
+}
+
+
+.nav__list a:visited{
+    color:#5f5f5f; ;
+}
+
+.svg__blur{
+    filter: blur(8px);
+}
+
+
+
+
+@keyframes bubble{
+    0%{
+        width: 0;
+        height: 0;
+        opacity: 0.7;
+    }
+    100%{
+        width: 150px;
+        height: 150px;
+        opacity: 0;
+    }
+}
+
+@keyframes animate{
+    0%{
+        stroke-dashoffset: 1980;
+    }
+
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+
+@media  screen and (max-width: 1000px){
+
+    .hi__window__logo{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:900px){
+    .window__title{
+        font-size: 4em   
+    }
+}
+
+@media screen and (max-width:743px){
+    .window__title{
+        font-size: 3em   
+    }
+}
+
+@media screen and (max-width:580px){
+    .window__title{
+        font-size: 2.5em   
+    }
+}

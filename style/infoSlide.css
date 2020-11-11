@@ -1,0 +1,69 @@
+ .info__content{
+     display: flex;
+     width: 82%;
+     height: 100%;
+ }
+
+.info__cube{
+    width: 80%;
+    flex: 1 0 auto;
+}
+
+ .cube{
+     width: 100%;
+     height: 100%;
+ }
+
+.info__skills{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 40%;
+}
+
+.info__aboutMe{
+    padding-bottom: 10%;
+}
+
+.info__aboutMe span{
+    color: #08FDD8;
+}
+
+.info__mySkills__pixelRed{
+    background: #FF0054 url(../images/pixel.png) ;
+    background-size: 150px;
+    animation: pixelAnim 0.8s steps(8) forwards;
+}
+
+.info__mySkills span{
+    color: #FF0054; 
+}
+
+.info__mySkills__pixelBlue{
+    background: #08FDD8 url(../images/pixel1.png) ;
+    background-size: 150px;
+    animation: pixelAnim 0.8s steps(8,end) forwards;
+}
+
+.info__skills span{
+    display: inline-block;
+    transition: 0.1s steps(1);
+    font-size: 3.5em;
+    margin-bottom: 10%;
+    transition-delay:0.8s;
+    padding: 1%;
+}
+
+@keyframes pixelAnim{
+    0%{
+        background-position-y: 0;
+    }
+    100%{
+        background-position-y: -350px;
+    }
+}
+
+ .info__skills p{
+    width: 80%;
+    font-size: 2em;
+ }

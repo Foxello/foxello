@@ -1,0 +1,122 @@
+.contact__content{
+    height: 80% !important;
+}
+
+.contact__form{
+    width: 55%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact__form h3{
+    font-size: 2.5em;
+    padding-bottom: 20%;
+}
+
+.contact__block-form{
+    height: 90%;
+    width: 80%;
+    background-color: #393939;
+    max-width: 600px;
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+}
+
+.contact__block-form::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(36, 239, 253,0.5) url(../images/loadingGif.gif) center / 150px no-repeat;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 9;
+    visibility: hidden;
+}
+
+.contact__block-form._sending::after{
+    opacity: 1;
+    visibility: visible;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact__form__inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.contact__form__inputBox{
+    width: 80%;
+    display: flex;
+    margin-bottom: 10%;
+    position: relative;
+}
+
+.contact__form__inputBox input,.contact__form__inputBox textarea{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    padding: 3% 0 ;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.contact__form__inputBox textarea{
+    padding: 9% 0;
+    resize: none;
+}
+
+.contact__form__inputBox textarea:focus ~ span{
+    font-size: 0;
+}
+
+.contact__form__inputBox span{
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    display: inline-block;
+    transition: 0.5s;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.contact__form__inputBox textarea ~ span{
+    transition: 0.1s;
+}
+
+.contact__form__inputBox input:focus ~ span,
+.contact__form__inputBox input:valid ~ span{
+    color:  #08FDD8;
+    left: 0; 
+    top: -65%;
+}
+
+.contact__form__button{
+    width: 40%;
+    padding: 2% 0;
+    font-size: 1.5em;
+}
+
+form ._error{
+    box-shadow: 0 0 15px red;
+}
