@@ -1,3 +1,5 @@
 $(document).ready(()=>{
-    $(".slider").slick();
+    $(".slider").slick({
+        mobileFirst: true
+    });
 });
