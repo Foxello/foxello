@@ -173,12 +173,13 @@ function handleTouchMove(evt) {
 
     var xDiff = xDown - xUp;
     var yDiff = yDown - yUp;
-
-    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+        var nav = document.querySelector(".hi__menu");/*most significant*/
         if ( xDiff > 0 ) {
-            /* left swipe */ 
+            nav.classList.remove("_open"); 
         } else {
-            /* right swipe */
+            
+            nav.classList.add("_open");
         }                       
     } else {
         if ( yDiff > 0 ) {
