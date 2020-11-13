@@ -88,41 +88,49 @@ function createSquare(){
     },7000)
 }
 
+function scrollDown(){
+    scrollX+=90;
+    currentIcon.lastNumber = currentIcon.curNumber;
+    var func = ()=>{
+        if(currentIcon.curNumber == 3){
+            return 0;
+        }
+        else{
+            return currentIcon.curNumber + 1;
+        }
+    }
+    currentIcon.curNumber = func();
+    changeCurIcon();
+    document.querySelector('.hi__container').style.transform = 
+    'rotateX(' + scrollX + 'deg)';
+}
+
+function scrollUp(){
+    scrollX-=90;
+    currentIcon.lastNumber = currentIcon.curNumber;
+    var func = ()=>{
+        if(currentIcon.curNumber == 0){
+            return 3;
+        }
+        else{
+            return currentIcon.curNumber-1;
+        }
+    }
+    currentIcon.curNumber = func();
+    changeCurIcon();
+    document.querySelector('.hi__container').style.transform = 
+    'rotateX(' + scrollX + 'deg)';
+}
+
 window.addEventListener("wheel", (e)=>{
     if(!scrollFlag){
         return;
     }
     if(e.deltaY >0){
-        scrollX+=90;
-        currentIcon.lastNumber = currentIcon.curNumber;
-        var func = ()=>{
-            if(currentIcon.curNumber == 3){
-                return 0;
-            }
-            else{
-                return currentIcon.curNumber + 1;
-            }
-        }
-        currentIcon.curNumber = func();
-        changeCurIcon();
-        document.querySelector('.hi__container').style.transform = 
-        'rotateX(' + scrollX + 'deg)';
+       scrollDown();
     }
     else{
-        scrollX-=90;
-        currentIcon.lastNumber = currentIcon.curNumber;
-        var func = ()=>{
-            if(currentIcon.curNumber == 0){
-                return 3;
-            }
-            else{
-                return currentIcon.curNumber-1;
-            }
-        }
-        currentIcon.curNumber = func();
-        changeCurIcon();
-        document.querySelector('.hi__container').style.transform = 
-        'rotateX(' + scrollX + 'deg)';
+        scrollUp();
     }
     
     scrollFlag = false;
@@ -136,3 +144,50 @@ window.addEventListener("wheel", (e)=>{
 })
 
 var cubes = setInterval(createSquare,350);
+
+
+document.addEventListener("touchstart", handleTouchStart,false);
+document.addEventListener("touchmove", handleTouchMove,false);
+
+var xDown = null;
+var yDown = null;
+
+function getTouches(evt) {
+    return evt.touches ||             // browser API
+           evt.originalEvent.touches; // jQuery
+} 
+
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];                                      
+    xDown = firstTouch.clientX;                                      
+    yDown = firstTouch.clientY;                                      
+};  
+
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;                                    
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+        if ( xDiff > 0 ) {
+            /* left swipe */ 
+        } else {
+            /* right swipe */
+        }                       
+    } else {
+        if ( yDiff > 0 ) {
+            scrollDown();
+        } else { 
+            scrollUp();
+        }                                                                 
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;                                             
+};
