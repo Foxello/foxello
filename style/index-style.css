@@ -337,6 +337,8 @@ path,polygon{
 
 ._open{
     left: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 @keyframes bubble{
@@ -403,6 +405,8 @@ path,polygon{
         height: 100%;
         transition: 0.5s ease;
         z-index: 1;
+        opacity: 0;
+        visibility: hidden;
     }
 
 
