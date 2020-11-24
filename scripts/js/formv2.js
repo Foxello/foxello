@@ -7,9 +7,9 @@ function send(event, php){
     
     req.onload = function() {
         if (req.status >= 200 && req.status < 400) {
-        json = JSON.parse(this.response); // Ебанный internet explorer 11
+        json = JSON.parse(this.response);
             console.log(json);
-            // ЗДЕСЬ УКАЗЫВАЕМ ДЕЙСТВИЯ В СЛУЧАЕ УСПЕХА ИЛИ НЕУДАЧИ
+         
             if (json.result == "success") {
                 // Если сообщение отправлено
                 alert("Сообщение отправлено");
