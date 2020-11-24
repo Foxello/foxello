@@ -188,7 +188,6 @@ function handleTouchMove(evt) {
             scrollUp();
         }                                                                 
     }
-    /* reset values */
     xDown = null;
     yDown = null;                                             
 };
