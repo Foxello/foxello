@@ -9,15 +9,11 @@ function send(event, php){
         if (req.status >= 200 && req.status < 400) {
         json = JSON.parse(this.response);
             console.log(json);
-         
             if (json.result == "success") {
-                // Если сообщение отправлено
                 alert("Сообщение отправлено");
             } else {
-                // Если произошла ошибка
                 alert("Ошибка. Сообщение не отправлено");
             }
-        // Если не удалось связаться с php файлом
         } else {alert("Ошибка сервера. Номер: "+req.status);}}; 
     
     // Если не удалось отправить запрос. Стоит блок на хостинге
