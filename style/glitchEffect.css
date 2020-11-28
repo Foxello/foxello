@@ -16,17 +16,17 @@
 #nickname:before {
   color: #FF0054;
   left: -4%;
-  animation: glitch-before 4s linear 0s infinite alternate;
-  -webkit-animation: glitch-before 4s linear 0s infinite alternate;
-  -moz-animation: glitch-before 4s linear 0s infinite alternate;
+  animation: glitch-before 4s linear  infinite alternate;
+  -webkit-animation: glitch-before 4s linear  infinite alternate;
+  -moz-animation: glitch-before 4s linear  infinite alternate;
 }
 
 #nickname:after {
   color: #08FDD8;
   left: -1%;
-  animation: glitch-after 4s linear 0s infinite alternate;
-  -webkit-animation: glitch-after 4s linear 0s infinite alternate;
-  -moz-animation: glitch-after 4s linear 0s infinite alternate;
+  animation: glitch-after 4s linear infinite alternate;
+  -webkit-animation: glitch-after 4s linear infinite alternate;
+  -moz-animation: glitch-after 4s linear infinite alternate;
 }
 
 @keyframes glitch-before {
