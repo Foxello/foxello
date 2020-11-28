@@ -21,10 +21,30 @@
         left:4%;
         //text-shadow: -3px 0 #08FDD8;
         animation: glitch-after 4s linear 0s infinite alternate;
+        -webkit-animation: glitch-after 4s linear 0s infinite alternate;
+        -moz-animation: glitch-after 4s linear 0s infinite alternate;
      }
 }
 
 @keyframes glitch-before {
+   $steps: 20;
+   @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+         clip: rect(random(150)+px, 350px, random(150)+px, 30px)
+      }
+   }
+}
+
+@keyframes glitch-after {
+   $steps: 20;
+   @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+         clip: rect(random(150)+px, 350px, random(150)+px, 30px)
+      }
+   }
+}
+
+@-webkit-keyframes glitch-before {
     $steps: 20;
     @for $i from 0 through $steps {
        #{percentage($i*(1/$steps))} {
@@ -33,7 +53,7 @@
     }
  }
  
- @keyframes glitch-after {
+@-webkit-keyframes glitch-after {
     $steps: 20;
     @for $i from 0 through $steps {
        #{percentage($i*(1/$steps))} {
@@ -41,3 +61,21 @@
        }
     }
  }
+
+@-moz-keyframes glitch-before {
+   $steps: 20;
+   @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+         clip: rect(random(150)+px, 350px, random(150)+px, 30px)
+      }
+   }
+}
+
+@-moz-keyframes glitch-after {
+   $steps: 20;
+   @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+         clip: rect(random(150)+px, 350px, random(150)+px, 30px)
+      }
+   }
+}
