@@ -105,6 +105,7 @@
     align-items:center;
     position: relative;
     z-index: 3;
+    background-size:cover
 }
 
 .slider__item__item:nth-child(odd){
